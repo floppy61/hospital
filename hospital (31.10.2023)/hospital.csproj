@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B081B365-7CA0-4410-B73E-31B876878ABB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>hospital</RootNamespace>
+    <AssemblyName>hospital</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=11.9.19.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>packages\Spire.Doc.11.9.19\lib\net40\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\about.Designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admEdit.Designer.cs">
+      <DependentUpon>admEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataBase.cs" />
+    <Compile Include="Forms\auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\auth.Designer.cs">
+      <DependentUpon>auth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\disEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\disEdit.Designer.cs">
+      <DependentUpon>disEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\docEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\docEdit.Designer.cs">
+      <DependentUpon>docEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\doctorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\doctorAdd.Designer.cs">
+      <DependentUpon>doctorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doctorsHospitalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>doctorsHospitalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="hospitalDataSetDoctors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hospitalDataSetDoctors.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="hospitalDataSetPatients.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hospitalDataSetPatients.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="hospitalDataSetVisitings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hospitalDataSetVisitings.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medinstAdmRegDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medinstAdmRegDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="medinstCatDisDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medinstCatDisDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="medinstCatOfDisDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medinstCatOfDisDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="medinstDocDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medinstDocDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="medinstPatDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medinstPatDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="medinstVisitsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medinstVisitsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\patEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\patEdit.Designer.cs">
+      <DependentUpon>patEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\patientAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\patientAdd.Designer.cs">
+      <DependentUpon>patientAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patientsHospitalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>patientsHospitalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\personal.Designer.cs">
+      <DependentUpon>personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\prevVisitings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\prevVisitings.Designer.cs">
+      <DependentUpon>prevVisitings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\reg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\reg.Designer.cs">
+      <DependentUpon>reg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\visiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\visiting.Designer.cs">
+      <DependentUpon>visiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="visitingsHospitalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>visitingsHospitalDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admEdit.resx">
+      <DependentUpon>admEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\auth.resx">
+      <DependentUpon>auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\disEdit.resx">
+      <DependentUpon>disEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\docEdit.resx">
+      <DependentUpon>docEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\doctorAdd.resx">
+      <DependentUpon>doctorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\patEdit.resx">
+      <DependentUpon>patEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\patientAdd.resx">
+      <DependentUpon>patientAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\personal.resx">
+      <DependentUpon>personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\prevVisitings.resx">
+      <DependentUpon>prevVisitings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\reg.resx">
+      <DependentUpon>reg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\visiting.resx">
+      <DependentUpon>visiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="doctorsHospitalDataSet.xsc">
+      <DependentUpon>doctorsHospitalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="doctorsHospitalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>doctorsHospitalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="doctorsHospitalDataSet.xss">
+      <DependentUpon>doctorsHospitalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hospitalDataSetDoctors.xsc">
+      <DependentUpon>hospitalDataSetDoctors.xsd</DependentUpon>
+    </None>
+    <None Include="hospitalDataSetDoctors.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hospitalDataSetDoctors.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hospitalDataSetDoctors.xss">
+      <DependentUpon>hospitalDataSetDoctors.xsd</DependentUpon>
+    </None>
+    <None Include="hospitalDataSetPatients.xsc">
+      <DependentUpon>hospitalDataSetPatients.xsd</DependentUpon>
+    </None>
+    <None Include="hospitalDataSetPatients.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hospitalDataSetPatients.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hospitalDataSetPatients.xss">
+      <DependentUpon>hospitalDataSetPatients.xsd</DependentUpon>
+    </None>
+    <None Include="hospitalDataSetVisitings.xsc">
+      <DependentUpon>hospitalDataSetVisitings.xsd</DependentUpon>
+    </None>
+    <None Include="hospitalDataSetVisitings.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hospitalDataSetVisitings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hospitalDataSetVisitings.xss">
+      <DependentUpon>hospitalDataSetVisitings.xsd</DependentUpon>
+    </None>
+    <None Include="medinstAdmRegDataSet.xsc">
+      <DependentUpon>medinstAdmRegDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstAdmRegDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>medinstAdmRegDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="medinstAdmRegDataSet.xss">
+      <DependentUpon>medinstAdmRegDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstCatDisDataSet.xsc">
+      <DependentUpon>medinstCatDisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstCatDisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>medinstCatDisDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="medinstCatDisDataSet.xss">
+      <DependentUpon>medinstCatDisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstCatOfDisDataSet.xsc">
+      <DependentUpon>medinstCatOfDisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstCatOfDisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>medinstCatOfDisDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="medinstCatOfDisDataSet.xss">
+      <DependentUpon>medinstCatOfDisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstDocDataSet.xsc">
+      <DependentUpon>medinstDocDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstDocDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>medinstDocDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="medinstDocDataSet.xss">
+      <DependentUpon>medinstDocDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstPatDataSet.xsc">
+      <DependentUpon>medinstPatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstPatDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>medinstPatDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="medinstPatDataSet.xss">
+      <DependentUpon>medinstPatDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstVisitsDataSet.xsc">
+      <DependentUpon>medinstVisitsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medinstVisitsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>medinstVisitsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="medinstVisitsDataSet.xss">
+      <DependentUpon>medinstVisitsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="patientsHospitalDataSet.xsc">
+      <DependentUpon>patientsHospitalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="patientsHospitalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>patientsHospitalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="patientsHospitalDataSet.xss">
+      <DependentUpon>patientsHospitalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="visitingsHospitalDataSet.xsc">
+      <DependentUpon>visitingsHospitalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="visitingsHospitalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>visitingsHospitalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="visitingsHospitalDataSet.xss">
+      <DependentUpon>visitingsHospitalDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
